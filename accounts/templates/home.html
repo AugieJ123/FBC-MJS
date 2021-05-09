@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Othername(s)</th>
+        <th scope="col">Course</th>
+        <th scope="col">Gender</th>
+        <th scope="col">DOB</th>
+        <th scope="col">POB</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Email</th>
+        <th scope="col">Status</th>
+        <th scope="col">Parent</th>
+        <th scope="col">Parent No.</th>
+        <th scope="col">Islamic Knowledge</th>
+        <th scope="col">Sura Memorized</th>
+        <th scope="col">Any islamic organization</th>
+        <th scope="col">Organization 1</th>
+        <th scope="col">Address 1</th>
+        <th scope="col">Position held 1</th>
+        <th scope="col">Organization 2</th>
+        <th scope="col">Address 2</th>
+        <th scope="col">Position held 2</th>
+        <th scope="col">Organization 3</th>
+        <th scope="col">Address 3</th> 
+        <th scope="col">Position held 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in datas%}
+        <tr>
+          <th scope="row">{{ data.id }}</th>
+          <td>{{ data.surname }}</td>
+          <td>{{ data.other_name }}</td>
+          <td>{{ data.course }}</td>
+          <td>{{ data.gender }}</td>
+          <td>{{ data.date_of_birth }}</td>
+          <td>{{ data.place_of_birth }}</td>
+          <td>{{ data.contact_address }}</td>
+          <td>{{ data.contact_number }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.marital_status }}</td>
+          <td>{{ data.parents }}</td>
+          <td>{{ data.parents_contact }}</td>
+          <td>{{ data.islamic_knowledge }}</td>
+          <td>{{ data.number_of_sura_memorized }}</td>
+          <td>{{ data.have_you_servered_in_any_islamic_organization }}</td>
+          <td>{{ data.organization_1 }}</td>
+          <td>{{ data.organization_address_1 }}</td>
+          <td>{{ data.position_held_1 }}</td>
+          <td>{{ data.organization_2 }}</td>
+          <td>{{ data.organization_address_2 }}</td>
+          <td>{{ data.position_held_2 }}</td>
+          <td>{{ data.organization_3 }}</td>
+          <td>{{ data.organization_address_3 }}</td>
+          <td>{{ data.position_held_3 }}</td>
+          
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

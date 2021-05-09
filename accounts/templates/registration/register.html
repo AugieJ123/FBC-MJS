@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Registration Form {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h2>Fourah Bay College Muslim Jamat</h2>
+        <h3>Registration Form</h3>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Register">
+        </form>
+    </div>
+{% endblock content %}
