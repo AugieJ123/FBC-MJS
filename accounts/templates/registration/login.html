@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} Log In {% endblock title %}
 
 {% block content %}
     <div class="container">
         <h1 class="mt-3">Fourah Bay College Muslim Jamat</h1>
-        <h3 class="mt-4" >Log in Form</h3>
+        <h3 class="mt-4" >Log in</h3>
 
         <form class="mt-3" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             <input class="btn btn-primary" type="submit" value="Log In">
         </form>
     </div>

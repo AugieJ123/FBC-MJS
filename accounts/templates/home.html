@@ -3,6 +3,23 @@
 {% block title %} Home {% endblock title %}
 
 {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 style="text-align: center; text-transform: capitalize; color: black; font-size: 40px; margin-top: 20px;">
+        Fourah Bay College Muslim Jamat Register Member
+      </h4>
+      <p class="text-center" style="font-size: 30px; font-family: Segoe UI;">The following are datas for members that use the site for registration.</p>
+      
+      <div class="float-right">
+        <a class="tooltip-test" title="Register new member" href="{% url 'register' %}" style="font-size: 50px; color: black;"><i class="fa fa-plus-circle"></i></a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -61,7 +78,8 @@
           <td>{{ data.organization_3 }}</td>
           <td>{{ data.organization_address_3 }}</td>
           <td>{{ data.position_held_3 }}</td>
-          
+          <td><a class="btn btn-sm btn-primary" href="{% url 'data_edit' data.pk %}">Update</a></td>
+          <td><a class="btn btn-sm btn-danger" href="{% url 'data_delete' data.pk %}">Delete</a></td>
         </tr>
       {% endfor %}
     </tbody>

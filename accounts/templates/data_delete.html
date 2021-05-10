@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete Data {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <!-- Modal -->
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete data</h5>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <p>Are sure you want to delete "{{ data.surname }} {{ data.other_name }}" ? </p>
+                    </div>
+                    <div class="modal-footer">
+                          <div class="form-group">
+                              <input class="btn btn-outline-danger" type="submit" value="Confirm">
+                              <a class="btn btn-secondary" href="{% url 'home' %}">Cancel</a>
+                          </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+    </div>
+{% endblock content %}
