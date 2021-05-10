@@ -5,6 +5,8 @@ from .views import RegistrationView, HomeView, RegisterDoneView, DataUpdateView,
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
 
+    path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html", redirect_authenticated_user=True), name='login'),
+
     path('register/', RegistrationView.as_view(), name='register'),
     path('register/done/', RegisterDoneView.as_view(), name='register_done'),
 
